@@ -1,0 +1,55 @@
+.bg-custom {
+  background-color: #181a1d;
+}
+.logo  {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-family: 'Gambetta', serif;
+  letter-spacing: 2px;
+  font-variation-settings: "wght" 311;
+  transition: 700ms ease;
+}
+.logo:hover {
+  font-variation-settings: "wght" 582;
+  letter-spacing: 7px;
+}
+.login-text {
+  text-transform: uppercase;
+  font-family: 'Gambetta', serif;
+  letter-spacing: 2px;
+  font-variation-settings: "wght" 311;
+  transition: 700ms ease;
+}
+.login-text:hover {
+  text-decoration: underline;
+}
+.registration-text {
+  text-transform: uppercase;
+  font-family: 'Gambetta', serif;
+  letter-spacing: 2px;
+  font-variation-settings: "wght" 311;
+  transition: 700ms ease;
+}
+.registration-text:hover {
+  text-decoration: underline;
+}
+.nav-link {
+    color: rgb(163, 163, 163);
+    font-size: 1rem;
+  
+    &:hover {
+      color: white;
+    }
+  }
+  
+  .nav-link.active {
+    color: white;
+  }
+  
+  .navbar-toggler {
+    filter: invert(1);
+  
+    &:focus {
+      box-shadow: none;
+    }
+  }

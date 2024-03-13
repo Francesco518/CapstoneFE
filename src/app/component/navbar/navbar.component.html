@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-md bg-custom px-3 py-3">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white logo">Cinemania</a>
+
+    <div class="d-flex gap-2">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-md-none d-sm-none d-none">
+        <button class="btn btn-outline-danger h-100" (click)="logout()">
+          <i class="bi bi-box-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav w-100">
+        <div class="d-flex justify-content-between">
+          <a
+            *ngIf="userLoggedIn"
+            class="nav-link"
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Back-Office
+          </a>
+          <a
+            *ngIf="!userLoggedIn"
+            class="nav-link login-text"
+            [routerLink]="['/login']"
+            routerLinkActive="active"
+            >Login
+          </a>
+          <a
+            *ngIf="!userLoggedIn"
+            class="nav-link registration-text"
+            [routerLink]="['/register']"
+            routerLinkActive="active"
+            >Register
+          </a>
+        </div>
+      </div>
+      <div class="d-none d-md-flex" *ngIf="userLoggedIn">
+        <button class="btn btn-outline-danger h-100" (click)="logout()">
+          <i class="bi bi-box-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

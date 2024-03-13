@@ -1,0 +1,99 @@
+<div class="login-form container-fluid login-page">
+  <div
+    class="row d-flex ms-5 justify-content-start col-md-10 col-sm-10 ms-md-2 me-5"
+  >
+    <div
+      class="col-12 col-md-8 col-sm-12 bg-custom mt-3 rounded-4 py-5 width-container"
+    >
+      <div class="row">
+        <h2 class="px-5 text-white text-center">Welcome Padawan</h2>
+        <p class="m-0 text-white text-center fs-6">
+          You wanna join the Jedi Order?
+        </p>
+        <span
+          class="pointer text-center redirect-link mt-1 fw-bold"
+          (click)="goRegister()"
+          >Click here to enter the resistence!</span
+        >
+        <div class="col-12 d-flex justify-content-center">
+          <form
+            #loginForm="ngForm"
+            (ngSubmit)="login(loginForm)"
+            class="p-5 form-size w-100"
+          >
+            <div class="mb-3">
+              <label for="email" class="form-label text-white">Email</label>
+              <div class="position-relative">
+                <div class="position-absolute end-0 mt-1 me-2 z-1"></div>
+                <input
+                  type="email"
+                  class="form-control border-0"
+                  id="email"
+                  name="email"
+                  ngModel
+                  email
+                  required
+                  [ngClass]="{
+                    'shake-horizontal':
+                    loginForm.controls['email'] && loginForm.controls['email'].errors?.['email'] && loginForm.controls['email'].touched
+                  }"
+                />
+                <div
+                  *ngIf="loginForm.controls['email'] && loginForm.controls['email'].errors?.['email'] && loginForm.controls['email'].touched"
+                >
+                  <span class="text-danger"
+                    >You joined to the dark side! Put a proper email!</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label text-white"
+                >Password</label
+              >
+              <div class="position-relative">
+                <input
+                  [type]="showPassword ? 'text' : 'password'"
+                  class="form-control border-0"
+                  id="password"
+                  name="password"
+                  [minlength]="5"
+                  ngModel
+                  required
+                  [ngClass]="{
+                    'shake-horizontal':
+                      loginForm.controls['password'] &&
+                      loginForm.controls['password'].touched &&
+                      loginForm.controls['password'].invalid
+                  }"
+                />
+                <div
+                  *ngIf="
+                    loginForm.controls['password'] &&
+                    loginForm.controls['password'].touched &&
+                    loginForm.controls['password'].invalid
+                  "
+                >
+                  <span class="text-danger">
+                    Put at least 5 characters or you will feel Palpatine's
+                    wrath!
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-5">
+              <button
+                type="submit"
+                [disabled]="loginForm.invalid"
+                class="btn button btn-outline-secondary px-5 text-white fw-bold"
+              >
+                Log In Jedi
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

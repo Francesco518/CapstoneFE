@@ -1,0 +1,45 @@
+
+
+.login-page {
+  height: 85.5vh;
+  background-image: url(https://wallpapermemory.com/uploads/551/interstellar-wallpaper-ultra-hd-4k-238903.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 546px;
+}
+.width-container {
+  width: 700px;
+  height: 500px;
+}
+.bg-custom {
+  background-color: black;
+}
+
+
+
+
+
+.redirect-link {
+  color: grey;
+  &:hover {
+    color: white
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.form-size {
+  max-width: 600px;
+}
+.button {
+  background-color: rgba(177, 45, 45, 0);
+  
+  cursor: pointer;
+  transition: 700ms ease;
+}
+.button:hover {
+  background-image: url(https://e0.pxfuel.com/wallpapers/349/312/desktop-wallpaper-star-wars-hyperspace-live.jpg);
+  background-position: center;
+}

@@ -1,0 +1,28 @@
+
+  .registration-page {
+    background-image: url(https://images6.alphacoders.com/111/1118597.jpg);
+    background-position: bottom;
+    background-size: cover;
+    height: 85.3vh;
+  }
+  @media screen and (max-width: 576px) {
+    .registration-page {
+      background-position: right;
+      transition: 1000ms ease-in;
+    }
+  }
+  .background-form {
+    background-color: black;
+  }
+  .button {
+    background-color: rgba(177, 45, 45, 0);
+    
+    cursor: pointer;
+    transition: 700ms ease;
+  }
+  .button:hover {
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e13a7654-6399-42e2-94e2-b3c0a5316bee/dexzia4-923ba3fd-3a4c-454b-a144-84545653d180.jpg/v1/fill/w_1280,h_800,q_75,strp/the_flash_4k_wallpapers__2__by_greatloveart_dexzia4-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODAwIiwicGF0aCI6IlwvZlwvZTEzYTc2NTQtNjM5OS00MmUyLTk0ZTItYjNjMGE1MzE2YmVlXC9kZXh6aWE0LTkyM2JhM2ZkLTNhNGMtNDU0Yi1hMTQ0LTg0NTQ1NjUzZDE4MC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.zxnz-xWtrpQQ4NOzDUNnLOs8i9sRZuGIcyEXQSERMNk);
+    background-position-x: 50%;
+
+    background-position-y: 75%;
+  }
