@@ -42,6 +42,7 @@ export class AuthService {
   logout() {
     this.authSubj.next(null)
     localStorage.removeItem('user')
+    const userId = this.getUserId()
     this.router.navigate(['/login'])
   }
   restore() {
@@ -76,5 +77,8 @@ export class AuthService {
         return throwError('Errore nella chiamata');
         break;
     }
+  }
+  getUserId(): string | null {
+    return 'userId'
   }
 }

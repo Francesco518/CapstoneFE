@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/service/auth.service';
 import { AuthData } from 'src/app/auth/interfaces/auth-data';
+import { ProfileService } from 'src/app/auth/service/profile.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,9 +11,11 @@ import { AuthData } from 'src/app/auth/interfaces/auth-data';
 })
 export class NavbarComponent implements OnInit {
   userLoggedIn!: AuthData |  null;
+
+
   
 
-  constructor(private authSrv: AuthService) { }
+  constructor(private authSrv: AuthService, private profileService: ProfileService, private router: Router) { }
 
   ngOnInit(): void {
     this.authSrv.restore()
@@ -22,5 +26,5 @@ export class NavbarComponent implements OnInit {
   logout() {
     this.authSrv.logout()
   }
-
+ 
 }

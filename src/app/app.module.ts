@@ -9,9 +9,17 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { AuthGuard } from './auth/guard/auth.guard';
+import { ProfileComponent } from './component/profile/profile.component';
+import { ProfileService } from './auth/service/profile.service';
+import { AuthService } from './auth/service/auth.service';
 
 
 const routes: Route[] = [
+  {
+    path: 'users/:profileId',
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
+  },
   {
     path: 'login',
     component: LoginComponent,
@@ -34,6 +42,7 @@ const routes: Route[] = [
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
+    ProfileComponent,
 
   ],
   imports: [
@@ -43,7 +52,7 @@ const routes: Route[] = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [AuthGuard, ProfileService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

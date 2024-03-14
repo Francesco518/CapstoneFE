@@ -29,7 +29,7 @@
             [routerLink]="['/']"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            >Back-Office
+            >Home
           </a>
           <a
             *ngIf="!userLoggedIn"
@@ -47,8 +47,16 @@
           </a>
         </div>
       </div>
+      <div class="d-none d-md-flex me-2" *ngIf="userLoggedIn">
+        <button
+          [routerLink]="['/users/me']"
+          class="btn btn-outline-secondary h-100"
+        >
+          <i class="bi bi-person-circle"></i>
+        </button>
+      </div>
       <div class="d-none d-md-flex" *ngIf="userLoggedIn">
-        <button class="btn btn-outline-danger h-100" (click)="logout()">
+        <button class="btn btn-outline-secondary h-100" (click)="logout()">
           <i class="bi bi-box-arrow-right"></i>
         </button>
       </div>
