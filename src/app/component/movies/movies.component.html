@@ -1,0 +1,44 @@
+<div class="main-container">
+  <div class="filter-container d-flex flex-column align-items-center">
+    <h1 class="text-white">Welcome to the 250 Best Movies</h1>
+    <div class="p-3 d-flex align-items-start justify-content-center">
+      <input
+        type="text"
+        [(ngModel)]="categoryFilter"
+        placeholder="Enter category"
+        class="rounded-pill text-center bg-dark border border-2 border-black text-white"
+      />
+      <button
+        class="btn p-0 pt-1 ms-2 text-white"
+        (click)="applyCategoryFilter()"
+      >
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+  <div class="movies-container">
+    <div class="container card-container">
+      <div class="row mx-0 p-5">
+        <a
+          class="col-4 d-flex flex-column align-items-center mb-4"
+          *ngFor="let movie of movies; let i = index"
+        >
+          <img src="{{ movie.poster }}" alt="" class="mb-1" />
+          <a [routerLink]="'/movies/' + movie.id">
+            <span class="movie-title mb-4">{{ movie.title }}</span>
+          </a>
+        </a>
+        <div class="pagination-container d-flex justify-content-between mt-4">
+          <button
+            class="btn btn-dark"
+            (click)="loadPreviousPage()"
+            [disabled]="page === 0"
+          >
+            Previous
+          </button>
+          <button class="btn btn-dark" (click)="loadNextPage()">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

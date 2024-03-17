@@ -1,0 +1,35 @@
+.filter-container {
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/307/12/896/simple-background-black-background-minimalism-theater-wallpaper-preview.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.movies-container {
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/862/449/162/jack-reacher-star-wars-interstellar-movie-john-wick-wallpaper-preview.jpg);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+img {
+    height: 200px;
+    width: 150px;
+    
+}
+
+.movie-title {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.card-container {
+background-image: url(https://c4.wallpaperflare.com/wallpaper/8/983/735/black-4k-blue-lines-wallpaper-preview.jpg);
+background-size: contain; 
+border-radius: 50px;  
+}
+a {
+  text-decoration: none;
+}

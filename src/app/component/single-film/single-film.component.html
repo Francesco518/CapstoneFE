@@ -1,0 +1,82 @@
+<div class="main-container">
+  <div class="upper-part">
+    <div class="container h-100 d-flex flex-column justify-content-end">
+      <div class="d-flex row">
+        <div class="col-6 d-flex flex-column justify-content-end">
+          <h1 class="text-white">
+            {{ movie.title }}
+          </h1>
+          <h3 class="text-white mb-2">
+            {{ movie.category }}
+          </h3>
+        </div>
+        <div class="col-6 d-flex justify-content-end mb-2">
+          <img src="{{ movie.poster }}" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-black p-4">
+    <div class="container">
+      <div class="date border-bottom">
+        <h2 class="text-white border border-0">
+          {{ movie.releaseDate }}
+        </h2>
+      </div>
+      <div class="where mt-2 border-bottom">
+        <h2 class="text-white">Streaming Services:</h2>
+        <ul class="text-white">
+          <ng-container *ngFor="let service of movie.streamingServices"
+            ><li class="fw-bold">{{ service }}</li></ng-container
+          >
+        </ul>
+      </div>
+      <div class="info border-bottom">
+        <h2 class="text-white">Info:</h2>
+        <h2 class="text-white fs-4">{{ movie.description }}</h2>
+      </div>
+      <div class="cast mb-3">
+        <h2 class="text-white">Cast:</h2>
+        <ul class="text-white">
+          <ng-container *ngFor="let actor of movie.actors">
+            <li class="fw-bold">{{ actor }}</li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer bg-white p-2">
+    <div class="container">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <div class="col-2 d-flex justify-content-center">
+            <i class="bi bi-facebook text-primary fs-3"></i>
+          </div>
+          <div class="col-2 d-flex justify-content-center">
+            <i class="bi bi-twitter-x fs-3"></i>
+          </div>
+          <div class="col-2 d-flex justify-content-center">
+            <i class="bi bi-youtube text-danger fs-3"></i>
+          </div>
+          <div class="col-2 d-flex justify-content-center">
+            <i class="bi bi-instagram text-black fs-3"></i>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+          <div class="col-4 d-flex justify-content-center">
+            <h5>About</h5>
+          </div>
+          <div class="col-4 d-flex justify-content-center">
+            <h5>Privacy</h5>
+          </div>
+          <div class="col-4 d-flex justify-content-center">
+            <h5>Advertising</h5>
+          </div>
+        </div>
+        <div class="mt-3 d-flex justify-content-center">
+          <h6 class="fw-bold">&#169; Belong to Francesco</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

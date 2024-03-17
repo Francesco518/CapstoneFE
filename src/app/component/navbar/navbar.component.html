@@ -32,6 +32,14 @@
             >Home
           </a>
           <a
+            *ngIf="userLoggedIn"
+            class="nav-link"
+            [routerLink]="['/movies']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Movies
+          </a>
+          <a
             *ngIf="!userLoggedIn"
             class="nav-link login-text"
             [routerLink]="['/login']"

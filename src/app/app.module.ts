@@ -12,12 +12,25 @@ import { AuthGuard } from './auth/guard/auth.guard';
 import { ProfileComponent } from './component/profile/profile.component';
 import { ProfileService } from './auth/service/profile.service';
 import { AuthService } from './auth/service/auth.service';
+import { MoviesComponent } from './component/movies/movies.component';
+import { SingleFilmComponent } from './component/single-film/single-film.component';
+import { CommonModule } from '@angular/common';
 
 
 const routes: Route[] = [
   {
     path: 'users/:profileId',
     component: ProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'movies',
+    component: MoviesComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'movies/:movieId',
+    component: SingleFilmComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -30,7 +43,7 @@ const routes: Route[] = [
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: ''
   }
 ]
 
@@ -43,6 +56,8 @@ const routes: Route[] = [
     LoginComponent,
     RegistrationComponent,
     ProfileComponent,
+    MoviesComponent,
+    SingleFilmComponent
 
   ],
   imports: [
@@ -51,6 +66,7 @@ const routes: Route[] = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    CommonModule
   ],
   providers: [AuthGuard, ProfileService, AuthService],
   bootstrap: [AppComponent],
