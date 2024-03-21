@@ -15,6 +15,7 @@ import { AuthService } from './auth/service/auth.service';
 import { MoviesComponent } from './component/movies/movies.component';
 import { SingleFilmComponent } from './component/single-film/single-film.component';
 import { CommonModule } from '@angular/common';
+import { HomeComponent } from './component/home/home.component';
 
 
 const routes: Route[] = [
@@ -31,6 +32,11 @@ const routes: Route[] = [
   {
     path: 'movies/:movieId',
     component: SingleFilmComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -57,7 +63,8 @@ const routes: Route[] = [
     RegistrationComponent,
     ProfileComponent,
     MoviesComponent,
-    SingleFilmComponent
+    SingleFilmComponent,
+    HomeComponent
 
   ],
   imports: [

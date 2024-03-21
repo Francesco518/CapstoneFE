@@ -1,0 +1,55 @@
+.main-container {
+    background-image: url(https://i.pinimg.com/736x/a0/a1/a7/a0a1a728dc9f084f26db69e8964179a7.jpg);
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: 400;
+    
+}
+.cinema-image  {
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+    position: relative;
+    
+    
+}
+.text-absolute {
+    position:absolute ;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 8px 6px 7px black;
+    font-size: 80px;
+}
+img {
+    width: 250px;
+    height: 330px;
+}
+.oscar {
+    position: relative;
+}
+.oscar img {
+    height: 100%;
+    width: 100%;
+}
+.text-absolute-second {
+    position: absolute;
+    top: 50%;
+    text-shadow: 8px 6px 7px black;
+    font-size: 80px;
+    color: #fdda12;
+    text-transform: uppercase;
+}
+.oscar-container img{
+    width: 50%;
+    height: 100%;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px 5px whitesmoke;
+}
+.oscar-container {
+    color: rgb(197, 191, 191);
+}
+.carousel-container img {
+    height: 200px;
+    width: 400px;
+    opacity: 0.5;
+}
