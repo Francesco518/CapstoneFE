@@ -16,6 +16,7 @@ import { MoviesComponent } from './component/movies/movies.component';
 import { SingleFilmComponent } from './component/single-film/single-film.component';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './component/home/home.component';
+import { MovieGeneratorComponent } from './component/movie-generator/movie-generator.component';
 
 
 const routes: Route[] = [
@@ -38,6 +39,11 @@ const routes: Route[] = [
     path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'generator',
+    component: MovieGeneratorComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'login',
@@ -64,7 +70,8 @@ const routes: Route[] = [
     ProfileComponent,
     MoviesComponent,
     SingleFilmComponent,
-    HomeComponent
+    HomeComponent,
+    MovieGeneratorComponent
 
   ],
   imports: [

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, tap } from 'rxjs';
+import { Observable, catchError, map, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -51,5 +51,17 @@ export class MoviesService {
       headers,
       params
     })
+  }
+  getRandomMovies(page: number = 0, size: number = 200): Observable<any> {
+    const token = localStorage.getItem('user')
+    let headers = new HttpHeaders()
+    if (token) {
+      const tokenParsed = JSON.parse(token).accessToken
+      headers = headers.append('Authorization', `Bearer ${tokenParsed}`)
+      console.log(tokenParsed)
+    }
+    return this.http.get(`${this.baseUrl}?page=${page}&size=${size}`, {
+      headers,
+    }) 
   }
 }

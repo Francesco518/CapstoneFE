@@ -40,6 +40,14 @@
             >Movies
           </a>
           <a
+            *ngIf="userLoggedIn"
+            class="nav-link"
+            [routerLink]="['/generator']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Generator</a
+          >
+          <a
             *ngIf="!userLoggedIn"
             class="nav-link login-text"
             [routerLink]="['/login']"
