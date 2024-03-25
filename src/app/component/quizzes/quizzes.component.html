@@ -1,0 +1,76 @@
+<div *ngIf="!quizStarted" class="first-side d-flex justify-content-center">
+  <div class="container">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div
+        class="col-12 quiz-container h-75 d-flex flex-column align-items-center justify-content-center rounded-pill"
+      >
+        <p class="m-0 fs-1">Mettiti alla prova rispondendo a 50 domande</p>
+        <button class="btn mt-5" (click)="startQuiz()">Inizia il Quiz</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="quizStarted">
+  <div *ngIf="!showResult">
+    <div class="hello d-flex flex-column justify-content-center">
+      <h3 class="text-center">
+        {{ quizzes[currentQuestionIndex].textQuestion }}
+      </h3>
+      <p class="text-center">Question {{ currentQuestionIndex + 1 }}:</p>
+      <div
+        *ngFor="
+          let option of quizzes[currentQuestionIndex].optionsAnswer;
+          let i = index
+        "
+        class="d-flex justify-content-center answers"
+      >
+        <input
+          type="radio"
+          id="{{ 'option_' + i }}"
+          name="answer"
+          [checked]="selectedAnswerIndex === i"
+          (change)="selectAnswer(i)"
+        />
+        <label
+          class="quiz-option"
+          [class.selected]="selectedAnswerIndex === i"
+          for="{{ 'option_' + i }}"
+          >{{ option }}</label
+        >
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <button class="btn next-button" (click)="nextQuestion()">Next</button>
+      </div>
+    </div>
+  </div>
+  <div
+    *ngIf="showResult"
+    class="quiz-results d-flex align-items-center justify-content-center flex-column"
+  >
+    <div>
+      <div class="d-flex">
+        <div class="bg-dark text-white p-5">
+          <h3 class="fs-1">Quiz Results</h3>
+          <p class="fs-2">
+            Correct Answers: {{ correctAnswers }} / {{ quizzes.length }}
+          </p>
+          <p class="fs-2">
+            Percentage: {{ (correctAnswers / quizzes.length) * 100 }}%
+          </p>
+          <div class="bar-chart">
+            <div
+              class="bar"
+              [style.width.%]="(correctAnswers / quizzes.length) * 100"
+            ></div>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://w0.peakpx.com/wallpaper/31/500/HD-wallpaper-dunkirk-movie.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

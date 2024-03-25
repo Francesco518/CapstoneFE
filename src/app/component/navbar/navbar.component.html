@@ -48,6 +48,14 @@
             >Generator</a
           >
           <a
+            *ngIf="userLoggedIn"
+            class="nav-link"
+            [routerLink]="['/quizzes']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Quiz</a
+          >
+          <a
             *ngIf="!userLoggedIn"
             class="nav-link login-text"
             [routerLink]="['/login']"

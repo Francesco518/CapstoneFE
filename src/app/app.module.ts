@@ -17,6 +17,7 @@ import { SingleFilmComponent } from './component/single-film/single-film.compone
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './component/home/home.component';
 import { MovieGeneratorComponent } from './component/movie-generator/movie-generator.component';
+import { QuizzesComponent } from './component/quizzes/quizzes.component';
 
 
 const routes: Route[] = [
@@ -38,6 +39,11 @@ const routes: Route[] = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'quizzes',
+    component: QuizzesComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -71,7 +77,8 @@ const routes: Route[] = [
     MoviesComponent,
     SingleFilmComponent,
     HomeComponent,
-    MovieGeneratorComponent
+    MovieGeneratorComponent,
+    QuizzesComponent
 
   ],
   imports: [
