@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md bg-custom px-3 py-3">
+<nav class="navbar navbar-expand-md bg-custom px-3 py-3 navbar-text">
   <div class="container-fluid">
     <a class="navbar-brand text-white logo">Cinemania</a>
 
@@ -25,7 +25,7 @@
         <div class="d-flex justify-content-between">
           <a
             *ngIf="userLoggedIn"
-            class="nav-link"
+            class="nav-link fs-5"
             [routerLink]="['/home']"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -33,7 +33,7 @@
           </a>
           <a
             *ngIf="userLoggedIn"
-            class="nav-link"
+            class="nav-link fs-5"
             [routerLink]="['/movies']"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -41,7 +41,7 @@
           </a>
           <a
             *ngIf="userLoggedIn"
-            class="nav-link"
+            class="nav-link fs-5"
             [routerLink]="['/generator']"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -49,7 +49,7 @@
           >
           <a
             *ngIf="userLoggedIn"
-            class="nav-link"
+            class="nav-link fs-5"
             [routerLink]="['/quizzes']"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -77,11 +77,13 @@
           class="btn btn-outline-secondary h-100"
         >
           <i class="bi bi-person-circle"></i>
+          <h6>Profile</h6>
         </button>
       </div>
       <div class="d-none d-md-flex" *ngIf="userLoggedIn">
         <button class="btn btn-outline-secondary h-100" (click)="logout()">
           <i class="bi bi-box-arrow-right"></i>
+          <h6>Logout</h6>
         </button>
       </div>
     </div>

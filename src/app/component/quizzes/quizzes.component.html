@@ -2,10 +2,26 @@
   <div class="container">
     <div class="row d-flex align-items-center justify-content-center h-100">
       <div
-        class="col-12 quiz-container h-75 d-flex flex-column align-items-center justify-content-center rounded-pill"
+        class="col-12 quiz-container h-75 d-flex flex-column align-items-center justify-content-center rounded"
       >
-        <p class="m-0 fs-1">Mettiti alla prova rispondendo a 50 domande</p>
-        <button class="btn mt-5" (click)="startQuiz()">Inizia il Quiz</button>
+        <h1>Quiz</h1>
+        <div class="d-flex align-items-center">
+          <h4 class="m-0">Level</h4>
+          <i class="bi bi-star-fill ms-3 text-warning"></i>
+          <i class="bi bi-star-fill ms-1 text-warning"></i>
+          <i class="bi bi-star-fill ms-1 text-warning"></i>
+        </div>
+        <img
+          src="https://play-lh.googleusercontent.com/I3-olaXBuFCRxyXSAifQbtNAxxy6_gXNe6VbaqE6NM7sGnEDWSkp1SgeE1EAjDq0olc"
+          alt=""
+          class="mt-3 mb-3 rounded-circle"
+        />
+        <p class="m-0">50 Domande</p>
+        <p>
+          Mettiti alla prova rispondendo a 50 domande sui franchise
+          cinematografici più importanti
+        </p>
+        <button class="btn" (click)="startQuiz()">Inizia il Quiz</button>
       </div>
     </div>
   </div>

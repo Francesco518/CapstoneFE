@@ -15,19 +15,20 @@ input[type="radio"] {
 }
 
 .quiz-container {
-    background: #C9D6FF;
+    
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #1a191b;
+    color:rgb(241, 233, 238);
 }
 
 .first-side {
-    background-image: url(https://images.alphacoders.com/131/1317553.jpeg);
-    height: 85.5vh;
+    background-image: url(https://wallpapers.com/images/hd/black-smoke-pictures-h32zzqcewpps5ynu.jpg);
+    height: 85.1vh;
     background-size: cover;
 }
 
 button {
-    border: solid 2px black;
+    border: solid 2px rgb(241, 233, 238);
+    color: rgb(241, 233, 238);
     transition: 2s;
 }
 

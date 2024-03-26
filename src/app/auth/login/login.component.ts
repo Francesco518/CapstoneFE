@@ -10,20 +10,25 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   public showPassword!: boolean
+  public loginError: boolean = false
+  public errorMessage: string = ''
 
   constructor(private authSrv: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
   login(loginForm: NgForm) {
-    // console.log(loginForm);
-    try {
-      this.authSrv.login(loginForm.value).subscribe();
-    } catch (error) {
-      alert('Login errato!');
-      console.log(error);
-      this.router.navigate(['/login']);
-    }
+    this.authSrv.login(loginForm.value).subscribe({
+      next: () => {
+        this.loginError = false
+      },
+      error: (err) => {
+        this.loginError = true
+        this.errorMessage = err.message
+        console.log(err)
+        this.router.navigate(['/login']);
+      }
+    })
   }
 
 

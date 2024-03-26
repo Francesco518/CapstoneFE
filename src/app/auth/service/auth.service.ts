@@ -34,9 +34,22 @@ export class AuthService {
         this.accessToken = dataLogin
         localStorage.setItem('user', JSON.stringify(dataLogin))
         console.log("Login completed successfully")
-        this.router.navigate(['/'])
+        this.router.navigate(['/home'])
       }),
-      catchError(this.errors)
+      catchError((err) => {
+        console.log(err)
+        let errorMessage = 'Errore nella chiamata'
+        if (err.error) {
+          errorMessage = err.error;
+        } else if (err.status === 404) {
+          errorMessage = 'Utente non trovato';
+        } else if (err.status === 400) {
+          errorMessage = 'Formato mail non valido';
+        } else if (err.status === 409) {
+          errorMessage = 'Email già registrata';
+        }
+        return throwError(errorMessage)
+      })
     )
   }
   logout() {
@@ -77,7 +90,7 @@ export class AuthService {
         return throwError('Errore nella chiamata');
         break;
     }
-  }
+    }
   getUserId(): string | null {
     return 'userId'
   }
