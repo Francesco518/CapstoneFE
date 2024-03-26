@@ -32,4 +32,12 @@ background-color: rgb(41, 37, 37);
   border-top-left-radius: 20%;
   border-top-right-radius: 20%;
 }
+@media screen and (max-width: 576px) {
+  .name-container {
+    font-size: 3.2rem;
+  }
+}
+
+
+
 

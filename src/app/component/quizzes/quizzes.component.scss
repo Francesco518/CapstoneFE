@@ -76,3 +76,8 @@ img {
     height: 300px;
     width: 200px;
 }
+@media screen and (max-width: 396px) {
+    .answers label {
+        min-width: 200px;
+    }
+}

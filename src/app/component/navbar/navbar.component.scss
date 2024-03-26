@@ -56,3 +56,10 @@
   .navbar-text {
     font-family: 'Gambetta', serif;
   }
+  @media screen and (max-width: 346px) {
+    .container-fluid {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }

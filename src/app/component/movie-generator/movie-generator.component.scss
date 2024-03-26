@@ -5,8 +5,9 @@
 }
 .container {
 
-background-image: url(https://www.mobyflick.it/wp-content/uploads/2021/09/reel-w.jpg);
+background-image: url(https://static.vecteezy.com/system/resources/previews/002/217/896/original/cinema-wallpaper-social-media-message-background-vector.jpg);
 background-size: cover;
+
 
 }
 .details {
@@ -16,4 +17,9 @@ img {
     width: 150px;
     height: 200px;
     border: none;
+}
+@media screen and (max-width: 1199px) {
+    .container {
+        background-position: top;
+    }
 }

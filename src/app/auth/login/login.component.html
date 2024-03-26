@@ -19,7 +19,7 @@
           <form
             #loginForm="ngForm"
             (ngSubmit)="login(loginForm)"
-            class="p-5 form-size w-100"
+            class="p-sm-1 p-md-5 form-size w-100"
           >
             <div *ngIf="loginError" class="text-danger text-center mb-3">
               {{ errorMessage }}
@@ -89,7 +89,7 @@
               <button
                 type="submit"
                 [disabled]="loginForm.invalid"
-                class="btn button btn-outline-secondary px-5 text-white fw-bold"
+                class="btn button btn-outline-secondary px-5 text-white fw-bold p"
               >
                 Log In Jedi
               </button>

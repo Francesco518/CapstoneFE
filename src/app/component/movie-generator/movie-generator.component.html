@@ -2,19 +2,21 @@
   <div
     class="container details h-100 d-flex flex-column align-items-center text-center justify-content-center"
   >
-    <h2 class="fst-italic">Movie Generator</h2>
+    <h2 class="fst-italic d-none d-md-block">Movie Generator</h2>
     <div *ngIf="randomMovie">
       <div *ngIf="showImage">
         <div>
           <img class="border" src="{{ randomMovie.poster }}" alt="" />
           <div>
             <h3 class="ms-3">{{ randomMovie.title }}</h3>
-            <p class="ms-5 fw-bold">{{ randomMovie.description }}</p>
+            <p class="ms-5 fw-bold d-none d-md-block">
+              {{ randomMovie.description }}
+            </p>
           </div>
         </div>
       </div>
       <button
-        class="mt-3 btn border text-white bg-black"
+        class="mt-sm-0 mt-md-3 btn border text-white bg-black"
         (click)="getRandomMovie()"
       >
         Generate Random Movie

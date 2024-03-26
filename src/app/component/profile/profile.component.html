@@ -32,16 +32,20 @@
             Enters at Hogwarts for the first time
           </h1>
           <div class="d-flex">
-            <h2 class="second-text fs-1 bg-dark text-white">Data</h2>
+            <h2 class="second-text fs-1 bg-dark text-white d-none d-lg-block">
+              Data
+            </h2>
             <div class="w-100">
               <div class="d-flex justify-content-center">
-                <h2>Name: {{ user.name }}</h2>
-                <h2 class="ms-5">House: {{ randomHouse }}</h2>
-                <h2 class="ms-5">Animal: {{ randomAnimal }}</h2>
+                <h2 class="ms-1 ms-md-0">Name: {{ user.name }}</h2>
+                <h2 class="ms-5 d-none d-sm-block">House: {{ randomHouse }}</h2>
+                <h2 class="ms-5 d-none d-sm-block">
+                  Animal: {{ randomAnimal }}
+                </h2>
               </div>
               <div class="d-flex justify-content-center">
                 <h2>Surname: {{ user.surname }}</h2>
-                <h2 class="ms-3">Wand: {{ randomWand }}</h2>
+                <h2 class="ms-3 d-none d-sm-block">Wand: {{ randomWand }}</h2>
               </div>
             </div>
           </div>
@@ -49,7 +53,7 @@
       </div>
     </div>
   </div>
-  <div class="d-flex justify-content-center">
+  <div class="d-none d-md-flex justify-content-center">
     <div
       class="final-container d-flex flex-column align-items-center w-50 rounded-pill mt-3"
     >
@@ -57,7 +61,9 @@
       <h2 class="mt-3 text-white">ALWAYS</h2>
     </div>
   </div>
-  <div class="bottom-part mt-5 mb-0 p-2 d-flex justify-content-around">
+  <div
+    class="bottom-part mt-5 mb-0 p-2 d-flex-none text-center d-md-flex justify-content-around"
+  >
     <div class="text-white mt-4">
       <h4 class="fw-bold text-danger">Visit Hogwarts</h4>
       <h4 class="mt-3">Hogwarts Castle</h4>
@@ -66,8 +72,8 @@
     </div>
     <div class="text-white mt-4">
       <h4 class="fw-bold text-danger">Quick Links</h4>
-      <div class="d-flex flex-column justify-content-around">
-        <div class="d-flex align-items-center">
+      <div class="text-center d-flex flex-column justify-content-around">
+        <div class="d-flex-none text-center d-md-flex align-items-center">
           <a
             class="text-decoration-none text-white fs-4"
             href="https://www.hobbitontours.com/"
@@ -75,7 +81,7 @@
           >
           <i class="bi bi-link ms-2 fs-5"></i>
         </div>
-        <div class="d-flex align-items-center">
+        <div class="d-flex-none text-center d-md-flex align-items-center">
           <a
             class="text-decoration-none text-white fs-4"
             href="https://www.viaggiareallehawaii.it/isola/kauai/parchi-kauai/napali-coast.html"
@@ -83,7 +89,7 @@
           >
           <i class="bi bi-link ms-2 fs-5"></i>
         </div>
-        <div class="d-flex align-items-center">
+        <div class="d-flex-none text-center d-md-flex align-items-center">
           <a
             class="text-decoration-none text-white fs-4"
             href="https://www.minube.it/posto-preferito/wallilabou-bay-a12201"
