@@ -1,51 +1,29 @@
 <div class="main-container">
-  <div class="upper-part">
-    <div class="container h-100 d-flex flex-column justify-content-end">
-      <div class="d-flex row">
-        <div class="col-6 d-flex flex-column justify-content-end">
-          <h1 class="text-white">
-            {{ movie.title }}
-          </h1>
-          <h3 class="text-white mb-2">
-            {{ movie.category }}
-          </h3>
-        </div>
-        <div class="col-6 d-flex justify-content-end mb-2">
-          <img src="{{ movie.poster }}" alt="" />
-        </div>
-      </div>
+  <div class="upper-part"></div>
+  <div
+    class="d-flex-none text-center d-sm-flex text-sm-start justify-content-center align-items-center"
+  >
+    <div class="p-5">
+      <img src="{{ movie.poster }}" alt="" />
+    </div>
+    <div>
+      <h1>{{ movie.title }}</h1>
+      <h6>
+        <span class="fw-bold">Data di Uscita:</span> {{ movie.releaseDate }}
+      </h6>
+      <h6><span class="fw-bold">Genere:</span> {{ movie.category }}</h6>
+      <h5>{{ movie.description }}</h5>
+      <h6>
+        <span class="fw-bold">Cast:</span> <br />{{ movie.actors.join(", ") }}
+      </h6>
+      <h6>
+        <span class="fw-bold">Dove vederlo:</span> <br />{{
+          movie.streamingServices.join(", ")
+        }}
+      </h6>
     </div>
   </div>
-  <div class="bg-black p-4">
-    <div class="container">
-      <div class="date border-bottom">
-        <h2 class="text-white border border-0">
-          {{ movie.releaseDate }}
-        </h2>
-      </div>
-      <div class="where mt-2 border-bottom">
-        <h2 class="text-white">Streaming Services:</h2>
-        <ul class="text-white">
-          <ng-container *ngFor="let service of movie.streamingServices"
-            ><li class="fw-bold">{{ service }}</li></ng-container
-          >
-        </ul>
-      </div>
-      <div class="info border-bottom">
-        <h2 class="text-white">Info:</h2>
-        <h2 class="text-white fs-4">{{ movie.description }}</h2>
-      </div>
-      <div class="cast mb-3">
-        <h2 class="text-white">Cast:</h2>
-        <ul class="text-white">
-          <ng-container *ngFor="let actor of movie.actors">
-            <li class="fw-bold">{{ actor }}</li>
-          </ng-container>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer bg-white p-2">
+  <div class="footer p-2">
     <div class="container">
       <div class="row">
         <div class="d-flex justify-content-center">
@@ -59,7 +37,7 @@
             <i class="bi bi-youtube text-danger fs-3"></i>
           </div>
           <div class="col-2 d-flex justify-content-center">
-            <i class="bi bi-instagram text-black fs-3"></i>
+            <i class="bi bi-instagram fs-3"></i>
           </div>
         </div>
         <div class="d-flex justify-content-center mt-5">
